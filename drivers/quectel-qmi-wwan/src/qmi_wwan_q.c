@@ -892,7 +892,7 @@ static struct rtnl_link_stats64 *rmnet_vnd_get_stats64(struct net_device *net, s
 #endif
 
 #if defined(QUECTEL_UL_DATA_AGG)
-static void usbnet_bh(unsigned long data) {
+static void __maybe_unused usbnet_bh(unsigned long data) {
 	sQmiWwanQmap *pQmapDev = (sQmiWwanQmap *)data;
 	struct tasklet_struct *t = &pQmapDev->usbnet_bh;
 	bool use_callback = false;
